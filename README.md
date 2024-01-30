@@ -11,12 +11,17 @@ While subjective assessments have been the gold standard for evaluating speech g
 
 ## Installation
 
-To use `discrete-speech-metrics`, you can install the latest version directly from GitHub:
+To use `discrete-speech-metrics`, you can clone the repo as:
 
 ```bash
-pip3 install git+https://github.com/Takaaki-Saeki/discrete-speech-metrics.git
+git clone https://github.com/Takaaki-Saeki/DiscreteSpeechMetrics.git
 ```
 
+Then install the toolkit.
+```bash
+cd DiscreteSpeechMetrics
+pip3 install .
+```
 
 ## Usage
 
@@ -100,6 +105,7 @@ distance = metrics.score(ref_wav, gen_wav)
 ### Mel Cepstral Distortion (MCD)
 MCD is a common metric for speech synthesis, which indicates how different two mel cepstral dequences are.
 Dynamic time warping is used to align the generated and reference speech features with different sequential lengths.
+It basically follows [the evaluation script in ESPnet](https://github.com/espnet/espnet/blob/master/egs2/TEMPLATE/asr1/pyscripts/utils/evaluate_mcd.py).
 
 ```python
 from discrete_speech_metrics import MCD
@@ -116,6 +122,7 @@ mcd = metrics.score(ref_wav, gen_wav)
 ### Log F0 RMSE
 Log F0 RMSE is a common metric to evaluate the prosody of synthetic speech, which calculates the differece of log F0 sequences from generated and reference speech.
 Dynamic time warping is used to align the generated and reference speech features with different sequential lengths.
+It basically follows [the evaluation script in ESPnet](https://github.com/espnet/espnet/blob/master/egs2/TEMPLATE/asr1/pyscripts/utils/evaluate_f0.py).
 
 ```python
 from discrete_speech_metrics import LogF0RMSE
@@ -132,6 +139,7 @@ logf0rmse = metrics.score(ref_wav, gen_wav)
 ### PESQ
 PESQ is a reference-aware objective metric to evaluate the perceptual speech quality.
 It assumes the generated and reference speech signals are time-aligned.
+[PyPESQ](https://github.com/vBaiCai/python-pesq) is used internally.
 
 ```python
 from discrete_speech_metrics import PESQ
@@ -148,6 +156,7 @@ pesq = metrics.score(ref_wav, gen_wav)
 ### UTMOS
 [UTMOS](https://arxiv.org/abs/2204.02152) is an automatic mean opinion score (MOS) prediction model that predicts subjective MOS from the generated speech.
 It does not require reference speech samples.
+[SpeechMOS](https://github.com/tarepan/SpeechMOS) is used internally.
 
 ```python
 from discrete_speech_metrics import UTMOS
