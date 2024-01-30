@@ -1,6 +1,6 @@
 # DiscreteSpeechMetrics
 
-Reference-aware automatic evaluation of speech generation using discrete speech representations.
+Reference-aware automatic speech evaluation toolkit using self-supervised speech representations.
 
 <div align="center">
 <img src="method.png" width="50%">
