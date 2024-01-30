@@ -171,3 +171,10 @@ utmos = metrics.score(generated_wav)
 
 ## Citation
 Comming soon.
+
+## Contributors
+- [Takaaki Saeki](https://takaaki-saeki.github.io/) (The University of Tokyo, Japan)
+- [Soumi Maiti](https://soumimaiti.github.io/) (Carnegie Mellon University, USA)
+- [Shinnosuke Takamichi](https://sites.google.com/site/shinnosuketakamichi/home) (The University of Tokyo, Japan)
+- [Shinji Watanabe](https://sites.google.com/view/shinjiwatanabe) (Carnegie Mellon University, USA)
+- [Hiroshi Saruwatari](https://scholar.google.com/citations?user=OS1XAoMAAAAJ&hl=en) (The University of Tokyo, Japan)
