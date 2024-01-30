@@ -2,10 +2,12 @@
 
 Reference-aware automatic evaluation of speech generation using discrete speech representations.
 
+<div align="center">
+<img src="method.png" width="50%">
+</div>
+
 >**Abstract:**<br>
 While subjective assessments have been the gold standard for evaluating speech generation, objective measures such as Mel Cepstral Distortion (MCD) and Mean Opinion Score (MOS) prediction models have also been used. Due to their cost efficiency, there is a need to establish objective measures that are highly correlated with human subjective judgments. This paper proposes reference-aware automatic evaluation methods for speech generation inspired by text generation metrics. The proposed *SpeechBERTScore* calculates the BERTScore for self-supervised speech feature sequences obtained from the generated speech and reference speech. We also propose to use self-supervised discrete speech tokens to compute objective measures such as *SpeechBLEU*. The experimental evaluations on synthesized speech show that our method correlates better with human subjective ratings than MCD and a state-of-the-art MOS prediction model. Furthermore, our method is found to be effective for noisy speech and has cross-lingual applicability.
-
-![comparison](comparison.png)
 
 ## Installation
 

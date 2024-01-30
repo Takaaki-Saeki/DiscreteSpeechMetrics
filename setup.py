@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='discrete-speech-metrics',
-    version='1.0',
+    version='1.0.0',
     packages=find_packages(),
     install_requires=[
         'numpy>=1.20.3',
@@ -23,5 +23,6 @@ setup(
     author='Takaaki-Saeki',
     author_email='saefrospace@gmail.com',
     description='A package for computing discrete speech metrics.',
+    url='https://github.com/Takaaki-Saeki/DiscreteSpeechMetrics',
     keywords='speech metrics',
 )
