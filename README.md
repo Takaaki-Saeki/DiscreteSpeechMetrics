@@ -9,7 +9,7 @@ Reference-aware automatic evaluation of speech generation using discrete speech 
 >**Abstract:**<br>
 While subjective assessments have been the gold standard for evaluating speech generation, objective measures such as Mel Cepstral Distortion (MCD) and Mean Opinion Score (MOS) prediction models have also been used. Due to their cost efficiency, there is a need to establish objective measures that are highly correlated with human subjective judgments. This paper proposes reference-aware automatic evaluation methods for speech generation inspired by text generation metrics. The proposed *SpeechBERTScore* calculates the BERTScore for self-supervised speech feature sequences obtained from the generated speech and reference speech. We also propose to use self-supervised discrete speech tokens to compute objective measures such as *SpeechBLEU*. The experimental evaluations on synthesized speech show that our method correlates better with human subjective ratings than MCD and a state-of-the-art MOS prediction model. Furthermore, our method is found to be effective for noisy speech and has cross-lingual applicability.
 
-## Installation
+## Install
 
 To use `discrete-speech-metrics`, you can clone the repo as:
 
@@ -26,7 +26,8 @@ pip3 install .
 ## Usage
 
 In the current DiscreteSpeechMetrics, we provide three types of new metrics: *SpeechBERTScore*, *SpeechBLEU* and *SpeechTokenDistance*.
-According to the evaluation results in the paper, the following SpeechBERTScore shows the highest correlation with human subjective judgements.
+
+NOTE: **We recommend to use the SpeechBERTScore** as it showed the highest correlations with human subjective judgements in the evaluation of the paper.
 
 ### SpeechBERTScore
 
