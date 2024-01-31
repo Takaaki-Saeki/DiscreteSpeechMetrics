@@ -1,4 +1,4 @@
-# DiscreteSpeechMetrics
+# Discrete Speech Metrics
 
 Reference-aware automatic speech evaluation toolkit using self-supervised speech representations. [[paper](https://arxiv.org/abs/2401.16812)]
 
