@@ -11,7 +11,7 @@ While subjective assessments have been the gold standard for evaluating speech g
 
 ## Install
 
-To use `discrete-speech-metrics`, you can clone the repo as:
+To use `discrete-speech-metrics`, clone this repo as:
 
 ```bash
 git clone https://github.com/Takaaki-Saeki/DiscreteSpeechMetrics.git
@@ -26,19 +26,20 @@ pip3 install .
 ## Usage
 
 In the current DiscreteSpeechMetrics, we provide three types of new metrics: *SpeechBERTScore*, *SpeechBLEU* and *SpeechTokenDistance*.
+These metrics can be used even when the reference and generated speech have different sequence lengths.
 
 NOTE: **We recommend to use the SpeechBERTScore** as it showed the highest correlations with human subjective judgements in the evaluation of the paper.
 
 ### SpeechBERTScore
 
 SpeechBERTScore calculates BERTScore on dense self-supervised speech features of generated and reference speech.
-The usage of the best setting in the paper is as follows.
+The usage of the paper's best setting is as follows.
 
 ```python
 import numpy as np
 from discrete_speech_metrics import SpeechBERTScore
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
 ref_wav = np.random.rand(10009)
 gen_wav = np.random.rand(10003)
 
@@ -54,13 +55,13 @@ precision, _, _ = metrics.score(ref_wav, gen_wav)
 ### SpeechBLEU
 
 SpeechBLEU calculates BLEU on speech discrete tokens of generated and reference speech.
-The usage of the best setting in the paper is as follows.
+The usage of the paper's best setting is as follows.
 
 ```python
 import numpy as np
 from discrete_speech_metrics import SpeechBLEU
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
 ref_wav = np.random.rand(10009)
 gen_wav = np.random.rand(10003)
 
@@ -79,13 +80,13 @@ bleu = metrics.score(ref_wav, gen_wav)
 ### SpeechTokenDistance
 
 SpeechTokenDistance calculates character-level distance measures on speech discrete tokens of generated and reference speech.
-The usage of the best setting in the paper is as follows.
+The usage of the paper's best setting is as follows.
 
 ```python
 import numpy as np
 from discrete_speech_metrics import SpeechTokenDistance
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
 ref_wav = np.random.rand(10009)
 gen_wav = np.random.rand(10003)
 
@@ -111,7 +112,7 @@ It basically follows [the evaluation script in ESPnet](https://github.com/espnet
 ```python
 from discrete_speech_metrics import MCD
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
 ref_wav = np.random.rand(10009)
 gen_wav = np.random.rand(10003)
 
@@ -128,7 +129,7 @@ It basically follows [the evaluation script in ESPnet](https://github.com/espnet
 ```python
 from discrete_speech_metrics import LogF0RMSE
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
 ref_wav = np.random.rand(10009)
 gen_wav = np.random.rand(10003)
 
@@ -145,7 +146,8 @@ It assumes the generated and reference speech signals are time-aligned.
 ```python
 from discrete_speech_metrics import PESQ
 
-# Reference and generated waveforms.
+# Example reference and generated waveforms.
+# The lengths should be matched.
 ref_wav = np.random.rand(10000)
 gen_wav = np.random.rand(10000)
 
@@ -162,7 +164,7 @@ It does not require reference speech samples.
 ```python
 from discrete_speech_metrics import UTMOS
 
-# Generated waveforms.
+# Example generated waveforms.
 gen_wav = np.random.rand(10003)
 
 metrics = UTMOS(sr=16000)
