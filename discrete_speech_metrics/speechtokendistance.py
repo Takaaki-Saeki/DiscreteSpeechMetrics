@@ -118,12 +118,12 @@ class SpeechTokenDistance:
         """
         audio = audio.to(self.device)
         if self.sr != 16000:
-            audio_16khz = self.resampler(audio)
+            audio = self.resampler(audio)
         if self.layer == None:
             outputs = self.model(audio)
             feats = outputs.last_hidden_state
         else:
-            feats_hiddens = self.model(audio_16khz, output_hidden_states=True).hidden_states
+            feats_hiddens = self.model(audio, output_hidden_states=True).hidden_states
             feats = feats_hiddens[self.layer]
         km_label = self.apply_kmeans(feats[0, ...]).tolist()
         return km_label
