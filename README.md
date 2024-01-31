@@ -1,6 +1,6 @@
 # DiscreteSpeechMetrics
 
-Reference-aware automatic speech evaluation toolkit using self-supervised speech representations.
+Reference-aware automatic speech evaluation toolkit using self-supervised speech representations. [[paper](https://arxiv.org/abs/2401.16812)]
 
 <div align="center">
 <img src="method.png" width="50%">
@@ -171,7 +171,15 @@ utmos = metrics.score(generated_wav)
 ```
 
 ## Citation
-Comming soon.
+If you use SpeechBERTScore, SpeechBLEU or SpeechTokenDistance, please cite the following preprint.
+```bibtex
+@article{saeki2024spbertscore,
+  title={{SpeechBERTScore}: Reference-Aware Automatic Evaluation of Speech Generation Leveraging NLP Evaluation Metrics},
+  author={Takaaki Saeki and Soumi Maiti and Shinnosuke Takamichi and Shinji Watanabe and Hiroshi Saruwatari},
+  journal={arXiv preprint arXiv:2401.16812},
+  year={2024}
+}
+```
 
 ## Contributors
 - [Takaaki Saeki](https://takaaki-saeki.github.io/) (The University of Tokyo, Japan)
