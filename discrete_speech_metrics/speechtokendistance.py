@@ -91,9 +91,16 @@ class SpeechTokenDistance:
         else:
             raise ValueError(f"Not found the setting for {model_type}.")
         file_path = pathlib.Path(__file__).parent.absolute()
+        km_path = file_path / f"km/km{vocab}.bin"
+        os.makedirs(file_path / "km", exist_ok=True)
         if not vocab in [50, 100, 200]:
             raise ValueError(f"km vocabularies other than 50, 100, 200 are not supported.")
-        km_path = file_path / f"km/km{vocab}.bin"
+        if not km_path.exists():
+            url = f"http://sarulab.sakura.ne.jp/saeki/discrete_speech_metrics/km/km{vocab}.bin"
+            subprocess.run(["wget", url, "-O", km_path])
+            print(f"Downloaded file from {url} to {km_path}")
+        else:
+            print(f"Using a cache at {km_path}")
         self.sr = sr
         self.layer = layer
         self.use_gpu = True
