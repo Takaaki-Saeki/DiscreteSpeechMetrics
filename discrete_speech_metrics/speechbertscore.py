@@ -1,10 +1,16 @@
 # Copyright 2024 Takaaki Saeki
 # MIT LICENSE (https://opensource.org/license/mit/)
 
+import logging
 import torchaudio
 import torch
 from transformers import HubertModel, Wav2Vec2Model, WavLMModel
 
+# In PyTorch 2+, a warning for checkpoint mismatch is raised.
+# But it should be a false alarm according to the following issue.
+# https://github.com/huggingface/transformers/issues/26796
+# I have added the following line to suppress the warning.
+logging.getLogger("transformers").setLevel(logging.ERROR)
 
 def bert_score(v_generated, v_reference):
     """

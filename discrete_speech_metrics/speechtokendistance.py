@@ -1,6 +1,7 @@
 # Copyright 2024 Takaaki Saeki
 # MIT LICENSE (https://opensource.org/license/mit/)
 
+import logging
 from transformers import HubertModel
 import os
 import pathlib
@@ -12,6 +13,11 @@ import numpy as np
 from Levenshtein import distance as levenshtein_distance
 import jellyfish
 
+# In PyTorch 2+, a warning for checkpoint mismatch is raised.
+# But it should be a false alarm according to the following issue.
+# https://github.com/huggingface/transformers/issues/26796
+# I have added the following line to suppress the warning.
+logging.getLogger("transformers").setLevel(logging.ERROR)
 
 def int_array_to_chinese_unicode(arr):
     """
