@@ -78,6 +78,7 @@ class LogF0RMSE:
 
     def __init__(
         self,
+        sr,
         f0min: int = 40,
         f0max: int = 800,
         n_fft: int = 512,
@@ -94,6 +95,7 @@ class LogF0RMSE:
             mcep_dim (int): Dimension of mel-cepstrum (default=25).
             mcep_alpha (float): All pass filter coefficient (default=0.41).
         """
+        self.sr = sr
         self.f0min = f0min
         self.f0max = f0max
         self.n_fft = n_fft
