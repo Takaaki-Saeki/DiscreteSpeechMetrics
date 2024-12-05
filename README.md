@@ -176,12 +176,13 @@ utmos = metrics.score(generated_wav)
 ```
 
 ## Citation
-If you use SpeechBERTScore, SpeechBLEU or SpeechTokenDistance, please cite the following preprint.
+If you use SpeechBERTScore, SpeechBLEU or SpeechTokenDistance, please cite the following paper.
 ```bibtex
-@article{saeki2024spbertscore,
+@inproceedings{saeki2024speechbertscore,
   title={{SpeechBERTScore}: Reference-Aware Automatic Evaluation of Speech Generation Leveraging NLP Evaluation Metrics},
   author={Takaaki Saeki and Soumi Maiti and Shinnosuke Takamichi and Shinji Watanabe and Hiroshi Saruwatari},
-  journal={arXiv preprint arXiv:2401.16812},
+  booktitle={Interspeech 2024},
+  pages={4943--4947},
   year={2024}
 }
 ```
